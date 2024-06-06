@@ -15,7 +15,7 @@ public class Main {
             System.out.println("4. Exit");
 
             if (!scanner.hasNextInt()) {
-                System.out.println("Invalid choice. Please enter a number (1/2/3/4).");
+                System.out.println("Invalid choice. Please enter a number (1/2/3/4)");
                 scanner.next();
                 continue;
             }
