@@ -1,3 +1,6 @@
+//I couldn't figure how to create several classes in GitHub so I will post all of them here separated by comments
+
+//Main.java
 import java.util.List;
 import java.util.Scanner;
 
@@ -124,5 +127,72 @@ public class Main {
         for (Cheese cheese : cart) {
             System.out.println(cheese.getInfo());
         }
+    }
+}
+
+
+
+
+//Cheese.java
+public class Cheese {
+    private String name;
+    private double price;
+
+    public Cheese(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getInfo() {
+        return name + " - eur " + price;
+    }
+}
+
+
+
+//CheeseShop.java
+import java.util.ArrayList;
+import java.util.List;
+
+// CheeseShop.java
+public class CheeseShop {
+    private List<Cheese> availableCheeses;
+    private List<Cheese> cart;
+
+    public CheeseShop() {
+        availableCheeses = new ArrayList<>();
+        cart = new ArrayList<>();
+    }
+
+    public void addCheese(Cheese cheese) {
+        availableCheeses.add(cheese);
+    }
+
+    public void removeCheese(Cheese cheese) {
+        availableCheeses.remove(cheese);
+    }
+
+    public List<Cheese> getAllCheeses() {
+        return availableCheeses;
+    }
+
+    public void addToCart(Cheese cheese) {
+        cart.add(cheese);
+    }
+
+    public void removeFromCart(Cheese cheese) {
+        cart.remove(cheese);
+    }
+
+    public List<Cheese> getCart() {
+        return cart;
     }
 }
